@@ -82,3 +82,104 @@ header h1 {
     padding: 20px 0;
   }
 }
+/* --- Nuevos estilos para el slider before/after global --- */
+
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 60px; /* margin bottom para separar del header */
+  user-select: none;
+}
+
+/* Wrapper que apila las imágenes */
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Las imágenes apiladas */
+.before-after-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* La capa con las imágenes "después" recortada con ancho variable */
+.after-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 50%; /* ancho inicial controlado por JS */
+}
+
+/* Slider input */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  background: transparent;
+  /* quitar relleno vertical para evitar aumentar altura */
+  height: 20px;
+  display: block;
+}
+
+/* Estilos para el slider */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: #ccc;
+  border-radius: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #444;
+  border-radius: 50%;
+  margin-top: -6px;
+  cursor: pointer;
+  border: 2px solid #222;
+}
+
+input[type=range]::-moz-range-track {
+  height: 8px;
+  background: #ccc;
+  border-radius: 4px;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: #444;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #222;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .slider-container {
+    width: 95%;
+  }
+
+  .before-after-wrapper {
+    max-height: 60vh;
+  }
+
+  .before-after-wrapper img {
+    max-height: 60vh;
+  }
+}
