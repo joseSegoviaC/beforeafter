@@ -26,82 +26,25 @@ header h1 {
   text-transform: uppercase;
 }
 
-/* Contenedor del carrusel */
-.carousel-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px 0;
-  max-height: 80vh; /* Limitar altura máxima para no ocupar toda la pantalla vertical */
-}
-
-/* Carrusel en sí */
-.carousel {
-  display: flex;
-  gap: 30px;
-  padding: 0 40px;
-  align-items: center;
-  min-height: 100px;
-}
-
-/* Imágenes */
-.carousel img {
-  height: auto;            /* Cambiado de fijo a auto para adaptarse */
-  max-height: 80vh;        /* Limita altura máxima a 80% del viewport height */
-  width: auto;             /* Ancho automático para mantener proporción */
-  max-width: 90vw;         /* Máximo ancho 90% viewport ancho (para pantallas muy pequeñas) */
-  flex-shrink: 0;
-  object-fit: contain;
-  border: none;
-  display: block;
-}
-
-/* Scrollbar (opcional) */
-.carousel-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.carousel-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.carousel-container::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 4px;
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-  .carousel {
-    gap: 20px;
-    padding: 0 20px;
-  }
-
-  body {
-    padding: 20px 0;
-  }
-}
-/* --- Nuevos estilos para el slider before/after global --- */
-
+/* Contenedor del slider before/after */
 .slider-container {
   position: relative;
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto 60px; /* margin bottom para separar del header */
+  margin: 0 auto 60px;
   user-select: none;
 }
 
-/* Wrapper que apila las imágenes */
+/* Wrapper apilando imágenes */
 .before-after-wrapper {
   position: relative;
   width: 100%;
   max-height: 80vh;
-  height: auto;
   overflow: hidden;
+  height: auto;
 }
 
-/* Las imágenes apiladas */
+/* Imágenes apiladas */
 .before-after-wrapper img {
   position: absolute;
   top: 0;
@@ -114,14 +57,14 @@ header h1 {
   pointer-events: none;
 }
 
-/* La capa con las imágenes "después" recortada con ancho variable */
+/* Capa de imágenes "después" recortada */
 .after-images {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   overflow: hidden;
-  width: 50%; /* ancho inicial controlado por JS */
+  width: 50%; /* ancho inicial */
 }
 
 /* Slider input */
@@ -131,12 +74,11 @@ input[type=range] {
   margin-top: 20px;
   cursor: pointer;
   background: transparent;
-  /* quitar relleno vertical para evitar aumentar altura */
   height: 20px;
   display: block;
 }
 
-/* Estilos para el slider */
+/* Estilos para la pista del slider */
 input[type=range]::-webkit-slider-runnable-track {
   height: 8px;
   background: #ccc;
