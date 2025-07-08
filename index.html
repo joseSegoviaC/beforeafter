@@ -42,19 +42,9 @@
         <img src="img/proyecto12-despues.jpg" alt="Proyecto 12 Después" />
       </div>
     </div>
-    <input type="range" min="0" max="100" value="50" class="slider" id="beforeAfterSlider" />
+    <input type="range" min="0" max="100" value="50" class="slider" id="slider" />
   </div>
 
-  <script>
-    const slider = document.getElementById('beforeAfterSlider');
-    const afterImages = document.querySelector('.after-images');
-
-    slider.addEventListener('input', (e) => {
-      const value = e.target.value;
-      afterImages.style.width = `${value}%`;
-    });
- <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
