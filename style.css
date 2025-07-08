@@ -55,6 +55,9 @@ header h1 {
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+
+  /* DEBUG: Añadido borde rojo para verificar visibilidad */
+  border: 2px solid red; /* Puedes borrar este borde cuando confirmes */
 }
 
 /* Capa de imágenes "después" recortada */
@@ -65,6 +68,9 @@ header h1 {
   height: 100%;
   overflow: hidden;
   width: 50%; /* ancho inicial */
+
+  /* DEBUG: para asegurar que se ve el área y no esté oculta */
+  background: rgba(255, 0, 0, 0.1); /* ligera superposición roja para visualizar el área */
 }
 
 /* Slider input */
